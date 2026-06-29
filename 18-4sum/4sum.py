@@ -1,28 +1,56 @@
 class Solution(object):
     def fourSum(self, nums, target):
-        ans=[]
         nums.sort()
-        n=len(nums)
-        for i in range(n):
-            if i>0 and nums[i]==nums[i-1]:
+        n = len(nums)
+        ans = []
+
+        for i in range(n - 3):
+
+            if i > 0 and nums[i] == nums[i - 1]:
                 continue
-            for j in range(i+1,n):
-                if j>i+1 and nums[j]==nums[j-1]:
+
+            # Minimum possible sum
+            if nums[i] + nums[i+1] + nums[i+2] + nums[i+3] > target:
+                break
+
+            # Maximum possible sum
+            if nums[i] + nums[n-1] + nums[n-2] + nums[n-3] < target:
+                continue
+
+            for j in range(i + 1, n - 2):
+
+                if j > i + 1 and nums[j] == nums[j - 1]:
                     continue
-                k=j+1
-                l=n-1
-                while k<l:
-                    total=nums[i]+nums[j]+nums[k]+nums[l]
-                    if total==target:
-                        ans.append([nums[i],nums[j],nums[k],nums[l]])
-                        k+=1
-                        l-=1
-                        while k<l and nums[k]==nums[k-1]:
-                            k+=1
-                        while l>k and nums[l]==nums[l+1]:
-                            l-=1
-                    elif total<target:
-                        k+=1
+
+                # Minimum possible sum
+                if nums[i] + nums[j] + nums[j+1] + nums[j+2] > target:
+                    break
+
+                # Maximum possible sum
+                if nums[i] + nums[j] + nums[n-1] + nums[n-2] < target:
+                    continue
+
+                left = j + 1
+                right = n - 1
+
+                while left < right:
+                    total = nums[i] + nums[j] + nums[left] + nums[right]
+
+                    if total == target:
+                        ans.append([nums[i], nums[j], nums[left], nums[right]])
+
+                        left += 1
+                        right -= 1
+
+                        while left < right and nums[left] == nums[left - 1]:
+                            left += 1
+
+                        while left < right and nums[right] == nums[right + 1]:
+                            right -= 1
+
+                    elif total < target:
+                        left += 1
                     else:
-                        l-=1
+                        right -= 1
+
         return ans
