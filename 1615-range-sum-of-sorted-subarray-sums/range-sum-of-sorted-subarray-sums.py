@@ -8,4 +8,6 @@ class Solution(object):
                 res.append(s)
         res.sort()
         mod=10**9+7
+
         return (sum(res[left-1:right]))%mod
+
