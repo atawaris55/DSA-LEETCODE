@@ -5,7 +5,9 @@ class Solution(object):
         count=0
         i=0
         j=0
-        while i<len(players) and j <len(trainers):
+        n=len(players)
+        m=len(trainers)
+        while i<n and j <m:
             if players[i] <= trainers[j]:
                 count+=1
                 i+=1
