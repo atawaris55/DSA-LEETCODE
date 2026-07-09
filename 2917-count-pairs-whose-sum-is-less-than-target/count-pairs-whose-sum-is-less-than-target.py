@@ -8,7 +8,7 @@ class Solution(object):
         while l<r:
             sum=nums[l]+nums[r]
             if sum<target:
-                count+=(r-l)
+                count+= r-l
                 l+=1
             else:
                 
