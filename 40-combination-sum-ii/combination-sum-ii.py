@@ -15,8 +15,7 @@ class Solution(object):
                 if i>idx and candidates[i]==candidates[i-1]:
                     continue
                 subset.append(candidates[i])
-                summ=total-candidates[i]
-                backtrack(i+1,summ,subset)
+                backtrack(i+1,total-candidates[i],subset)
                 subset.pop()
         backtrack(0,target,[])
         return res
