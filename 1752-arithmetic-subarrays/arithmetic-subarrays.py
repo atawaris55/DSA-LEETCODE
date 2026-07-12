@@ -3,7 +3,8 @@ class Solution(object):
         res=[]
         n=len(nums)
         for i in range(len(l)):
-            g=sorted(nums[l[i]:r[i]+1])
+            g=nums[l[i]:r[i]+1]
+            g.sort()
             diff = g[1] - g[0] 
             flag=True
             for j in range(1,len(g)-1):
