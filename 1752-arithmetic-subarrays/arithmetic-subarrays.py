@@ -1,7 +1,8 @@
 class Solution(object):
     def checkArithmeticSubarrays(self, nums, l, r):
-        res=[]
+        res=[True]*len(l)
         n=len(nums)
+
         for i in range(len(l)):
             g=nums[l[i]:r[i]+1]
             g.sort()
@@ -9,9 +10,9 @@ class Solution(object):
             flag=True
             for j in range(1,len(g)-1):
                 if g[j+1]-g[j]!=diff:
-                    flag=False
+                    res[i]=False
                     break
-            res.append(flag)
+            
         return res
 
 
