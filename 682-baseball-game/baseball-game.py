@@ -1,7 +1,7 @@
 class Solution(object):
     def calPoints(self, operations):
         record=[]
-        total=0
+ 
         for i in operations:
             if i  =='C':
                 record.pop()
@@ -11,9 +11,8 @@ class Solution(object):
                 record.append(record[-1]+record[-2])
             else:
                 record.append(int(i))
-        for i in record:
-            total+=i
-        return total
+        
+        return sum(record)
         
 
 
