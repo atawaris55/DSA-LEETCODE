@@ -1,10 +1,9 @@
 class Solution(object):
     def longestOnes(self, nums, k):
-        maxi=0
+
         n=len(nums)
-        l=0
-        r=0
-        z=0
+        maxi,r,z,l=0,0,0,0
+
         for r in range(n):
             if nums[r]==0:
                 z+=1
