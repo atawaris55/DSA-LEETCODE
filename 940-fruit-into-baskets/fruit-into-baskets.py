@@ -8,7 +8,7 @@ class Solution(object):
 
         for i in range(n):
             pick[fruits[i]]=pick.get(fruits[i],0)+1
-            while len(pick)>2:
+            if len(pick)>2:
                 pick[fruits[l]]-=1
                 if pick[fruits[l]]==0:
                     del pick[fruits[l]]
