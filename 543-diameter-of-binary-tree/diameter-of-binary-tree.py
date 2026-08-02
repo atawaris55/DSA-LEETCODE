@@ -6,13 +6,13 @@
 #         self.right = right
 class Solution(object):
     def diameterOfBinaryTree(self, root):
-        dia=[0]
+        self.dia=0
         def solve(node):
             if node ==None:
                 return 0
             lefth=solve(node.left)
             righth=solve(node.right)
-            dia[0]=max(dia[0],lefth+righth)
+            self.dia=max(self.dia,lefth+righth)
             return 1+max(lefth,righth)
         solve(root)
-        return dia[0]
+        return self.dia
