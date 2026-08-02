@@ -8,7 +8,7 @@ class Solution(object):
     def diameterOfBinaryTree(self, root):
         self.dia=0
         def solve(node):
-            if node ==None:
+            if  node is None:
                 return 0
             lefth=solve(node.left)
             righth=solve(node.right)
