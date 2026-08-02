@@ -3,13 +3,12 @@ class Solution(object):
         num=''
         for ch in s:
             num+=str(ord(ch)-ord('a')+1)
+        print(num)
         while k>0:
-            num_int=int(num)
+        
             jod=0
-            while num_int >0:
-                dig=num_int%10
-                jod+=dig
-                num_int=num_int//10
+            for dig in num:
+                jod+=int(dig)
             num=str(jod)
             k-=1
         return jod
