@@ -3,7 +3,7 @@ class Solution(object):
         alicetotal=sum(aliceSizes)
         bobtotal=sum(bobSizes)
         diff=( bobtotal - alicetotal)//2
-        
+        bobset=set(bobSizes)
         for x in aliceSizes:
-            if x+diff in set(bobSizes):
+            if x+diff in bobset:
                 return [x,x+diff]
