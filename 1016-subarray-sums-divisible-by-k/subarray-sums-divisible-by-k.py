@@ -6,9 +6,9 @@ class Solution(object):
         rem=0
         for num in nums:
             sum+=num
-            rem=sum%k
-            if rem in mp:
-                ans+=mp[rem]
-            mp[rem]=mp.get(rem,0)+1
+            
+            if sum%k in mp:
+                ans+=mp[sum%k]
+            mp[sum%k]=mp.get(sum%k,0)+1
         return ans
         
