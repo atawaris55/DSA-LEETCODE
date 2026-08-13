@@ -1,12 +1,12 @@
 class Solution(object):
     def subarraySum(self, nums, k):
         mp={0:1}
-        summ=0
+        sum=0
         ans=0
         for num in nums:
-            summ+=num
-            if summ-k in mp:
-                ans+=mp[summ-k]
-            mp[summ]=mp.get(summ,0)+1
+            sum+=num
+            if sum-k in mp:
+                ans+=mp[sum-k]
+            mp[sum]=mp.get(sum,0)+1
         return ans
         
