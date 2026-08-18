@@ -9,11 +9,11 @@ class Solution(object):
         pA=headA
         pB=headB
         while pA !=pB:
-            if pA is None:
+            if pA == None:
                 pA=headB             
             else:
                 pA=pA.next
-            if pB is None:
+            if pB == None:
                 pB = headA
             else:
                 pB=pB.next
