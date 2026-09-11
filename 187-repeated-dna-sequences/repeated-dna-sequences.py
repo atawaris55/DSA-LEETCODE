@@ -5,9 +5,12 @@ class Solution(object):
         ans=[]
         for right in range(len(s)):
             if right-left+1==10:
-                count[s[left:right+1]]=count.get(s[left:right+1],0)+1
+                seq=s[left:right+1]
+                count[seq]=count.get(seq,0)+1
+
+                if count[seq]==2:
+                    ans.append(seq)
                 left+=1
-        for k,val in count.items():
-            if val>=2:
-                ans.append(k)
+
+
         return ans
