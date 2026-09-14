@@ -1,8 +1,12 @@
 class Solution(object):
     def singleNumber(self, nums):
-        count={}
+        seen=[]
+        seen1=set()
         for i in range(len(nums)):
-            count[nums[i]]=count.get(nums[i],0)+1
-        for k , val in count.items():
-            if val ==1 :
-                return k
+            if nums[i] not in seen:
+                seen.append(nums[i])
+            else:
+                seen1.add(nums[i])
+        seen_sum=sum(seen)
+        seen1_sum=sum(seen1)
+        return seen_sum-seen1_sum
