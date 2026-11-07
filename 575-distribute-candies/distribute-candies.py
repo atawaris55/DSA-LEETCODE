@@ -5,7 +5,4 @@ class Solution(object):
         for i in range(len(candyType)):
             dic[candyType[i]]=dic.get(candyType[i],0)+1
         
-        if n/2 < len(dic):
-            return n/2
-        else:
-            return len(dic)
+        return min(n/2,len(dic))
