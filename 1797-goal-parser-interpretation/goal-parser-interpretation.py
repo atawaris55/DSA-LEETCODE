@@ -3,7 +3,7 @@ class Solution(object):
         ans=''
         i=0
         while i<len(command):
-            if command[i:i+1] == 'G':
+            if command[i] == 'G':
                 ans+='G'
                 i+=1
             elif command[i:i+2]=='()':
