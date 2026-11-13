@@ -3,6 +3,6 @@ class Solution(object):
         ans=0
         for i in range(len(sentences)):
             ans=max(ans,len(sentences[i].split()))
-        print(ans)
+
         return ans
 
